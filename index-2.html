@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Base y Preflight</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <!-- HTML Tradicional (Se verá sin estilo por Preflight) -->
+    <h1>Título normal</h1>
+    <!-- Se ve grande y negrita por defecto en HTML normal, pero no aquí -->
+
+    <br>
+
+    <!-- Tailwind CSS (Estilo explícito) -->
+    <h1 class="text-4xl font-bold mb-4">Título Grande y Negrita</h1>
+    <!-- Tú defines explícitamente el tamaño, peso y margen -->
+
+    <hr>
+
+    <!-- Ejemplo de lo que se conseguiría con @layer base -->
+    <h2 class="text-2xl font-semibold mb-2">Subtítulo estilizado (h2)</h2>
+
+</body>
+
+</html>

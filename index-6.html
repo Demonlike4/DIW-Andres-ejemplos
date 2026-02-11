@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Tailwind v4</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="p-10 space-y-20 h-screen overflow-y-auto">
+
+    <!-- 06. Flexbox -->
+
+    <!-- Activar Flexbox -->
+    <nav class="flex">
+        <!-- Los hijos se colocan automáticamente en fila -->
+        <div class="bg-blue-200 p-4">Item 1</div>
+        <div class="bg-blue-300 p-4">Item 2</div>
+    </nav>
+
+    <!-- Dirección (flex-direction) -->
+    <nav class="flex flex-col">
+        <!-- Los elementos se apilan verticalmente -->
+        <div class="bg-green-200 p-4">Item 1</div>
+        <div class="bg-green-300 p-4">Item 2</div>
+    </nav>
+
+    <!-- Alineación Vertical: items- -->
+    <nav class="h-20 flex items-center bg-gray-100">
+        <!-- Todos los hijos estarán centrados verticalmente -->
+        <div class="bg-yellow-200 p-4">Item Centrado</div>
+    </nav>
+
+    <!-- Distribución Horizontal: justify- -->
+    <!-- Ejemplo con justify-between -->
+    <nav class="flex items-center justify-between bg-gray-100 px-4">
+        <img src="./assets/logo.png" alt="Logo" class="w-10">
+        <div>Enlaces</div>
+        <a href="#">Botón</a>
+    </nav>
+
+    <!-- Espaciado entre Elementos: gap- -->
+    <div class="flex gap-10">
+        <a href="#">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Contacto</a>
+        <!-- Separación automática de 40px entre enlaces -->
+    </div>
+
+    <!-- Ejemplo Completo: Navbar con Flexbox -->
+    <nav class="h-20 bg-slate-800 flex items-center justify-between px-10">
+        <img src="./assets/logo.png" class="h-14 w-auto object-contain" alt="Logo IES HLANZ">
+
+        <div class="text-white flex gap-10">
+            <a href="#">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Contacto</a>
+        </div>
+
+        <a href="#" class="bg-amber-700 text-white px-7 py-3 rounded-lg">Contáctame</a>
+    </nav>
+
+    <!-- Truco: Ajustar Logo con object-cover -->
+    <img src="./assets/logo.png" class="h-14 w-64 object-cover" alt="Logo">
+
+    <!-- Alineación Individual: self- -->
+    <div class="flex items-center h-20 bg-gray-100">
+        <div>Centrado</div>
+        <div class="self-start bg-red-200">Arriba</div>
+        <div>Centrado</div>
+    </div>
+
+    <!-- Orden de los Elementos: order- -->
+    <div class="flex">
+        <div class="order-1 bg-blue-200 p-4">Segundo (visualmente)</div>
+        <div class="bg-green-200 p-4">Primero (order-0 por defecto)</div>
+    </div>
+
+    <!-- Ajuste de Línea: flex-wrap -->
+    <div class="flex flex-wrap gap-4">
+        <!-- Si no caben, los elementos saltan a la siguiente línea -->
+        <div class="bg-gray-200 p-4">Item 1</div>
+        <div class="bg-gray-200 p-4">Item 2</div>
+        <div class="bg-gray-200 p-4">Item 3</div>
+    </div>
+
+</body>
+
+</html>

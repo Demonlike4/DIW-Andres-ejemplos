@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilidades Avanzadas - Tailwind v4</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        /* Simulación de las capas de Tailwind en el navegador usando el CDN de v4 */
+        @theme {
+            --color-primary: #3b82f6;
+            --color-secondary: #8b5cf6;
+            --color-accent: #f59e0b;
+            --color-brand-blue: #1e40af;
+            --color-brand-purple: #7c3aed;
+            --color-brand-pink: #ec4899;
+
+            --font-display: "Poppins", sans-serif;
+            --font-body: "Inter", sans-serif;
+
+            --spacing-section: 5rem;
+            --spacing-card: 1.5rem;
+            --spacing-container: 2rem;
+
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1rem;
+
+            --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        :root {
+            --header-height: 80px;
+            --sidebar-width: 250px;
+            --transition-speed: 200ms;
+            --z-header: 50;
+            --content-max-width: 1200px;
+            --footer-height: 200px;
+            --transition-normal: 200ms;
+            --z-sticky: 200;
+        }
+
+        @layer base {
+            h1 { @apply text-4xl font-bold mb-6; }
+            h2 { @apply text-3xl font-semibold mb-4 text-gray-800 dark:text-gray-100; }
+            h3 { @apply text-2xl font-semibold mb-3; }
+            a { @apply text-blue-600 dark:text-blue-400 hover:underline transition-colors; }
+        }
+
+        @layer components {
+            .btn {
+                @apply px-6 py-2 rounded-lg font-semibold transition-all duration-200 active:scale-95;
+            }
+            .btn-primary {
+                @apply btn bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600;
+            }
+            .btn-secondary {
+                @apply btn bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
+            }
+            .card {
+                @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-shadow duration-300 hover:shadow-2xl;
+            }
+            .badge {
+                @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+            }
+            .badge-success {
+                @apply badge bg-green-100 text-green-800;
+            }
+            .badge-error {
+                @apply badge bg-red-100 text-red-800;
+            }
+            .input {
+                @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-200;
+            }
+        }
+
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 font-body transition-colors duration-300">
+
+    <!-- Arbitrary Variants: Seleccionar Hijos Directos -->
+    <section class="p-10 space-y-8">
+        <h2 class="text-gray-900 dark:text-white">Arbitrary Variants: Seleccionar Hijos</h2>
+        <div class="[&>*]:p-4 [&>*]:bg-gray-100 dark:[&>*]:bg-gray-800 [&>*]:rounded-lg space-y-4">
+            <div>Hijo 1 - Estilizado desde el padre</div>
+            <div>Hijo 2 - Estilizado desde el padre</div>
+            <div>Hijo 3 - Estilizado desde el padre</div>
+        </div>
+
+        <h3 class="mt-8 dark:text-gray-200">Estilizar Lista Directamente</h3>
+        <ul class="[&>li]:py-2 [&>li]:border-b [&>li]:border-gray-300 dark:[&>li]:border-gray-700 dark:text-gray-300">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+    </section>
+
+    <!-- Pseudo-selectores Avanzados -->
+    <section class="p-10 space-y-8">
+        <h2 class="dark:text-white">Pseudo-selectores: nth-child, first, last</h2>
+        <table class="w-full border-collapse">
+            <tbody
+                class="[&>tr:nth-child(odd)]:bg-gray-100 dark:[&>tr:nth-child(odd)]:bg-gray-800 [&>tr:nth-child(even)]:bg-white dark:[&>tr:nth-child(even)]:bg-gray-900 dark:text-gray-300">
+                <tr class="border-b dark:border-gray-700">
+                    <td class="p-2">Fila 1 - Gris</td>
+                </tr>
+                <tr class="border-b dark:border-gray-700">
+                    <td class="p-2">Fila 2 - Blanco</td>
+                </tr>
+                <tr class="border-b dark:border-gray-700">
+                    <td class="p-2">Fila 3 - Gris</td>
+                </tr>
+                <tr class="border-b dark:border-gray-700">
+                    <td class="p-2">Fila 4 - Blanco</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="[&>*:first-child]:font-bold [&>*:last-child]:text-gray-500 mt-8 space-y-2 dark:text-gray-300">
+            <p>Primer párrafo - Negrita</p>
+            <p>Párrafo intermedio - Normal</p>
+            <p>Último párrafo - Gris</p>
+        </div>
+
+        <div
+            class="[&>*:nth-child(3)]:bg-yellow-200 dark:[&>*:nth-child(3)]:bg-yellow-800/30 mt-8 flex gap-4 dark:text-gray-300">
+            <div class="p-4 border dark:border-gray-700">Hijo 1</div>
+            <div class="p-4 border dark:border-gray-700">Hijo 2</div>
+            <div class="p-4 border dark:border-gray-700">Hijo 3 - Especial</div>
+            <div class="p-4 border dark:border-gray-700">Hijo 4</div>
+        </div>
+    </section>
+
+    <!-- @theme y CSS Variables -->
+    <section class="p-10 space-y-8">
+        <h2 class="dark:text-white">@theme y Variables CSS (:root)</h2>
+        <div class="bg-primary text-white p-6 rounded-lg font-display text-xl">
+            Fondo primary y fuente display (definidos en @theme)
+        </div>
+
+        <header
+            class="h-[var(--header-height)] bg-brand-blue text-white flex items-center justify-center rounded-lg shadow-card">
+            Header con altura de variable :root (80px)
+        </header>
+
+        <div class="flex gap-4">
+            <div class="bg-accent text-white p-4 rounded-md shadow-lg">Colores accent</div>
+            <div class="bg-brand-purple text-white p-4 rounded-md shadow-lg">Colores brand-purple</div>
+            <div class="bg-brand-pink text-white p-4 rounded-md shadow-lg">Colores brand-pink</div>
+        </div>
+    </section>
+
+    <!-- @apply y @layer -->
+    <section class="p-10 space-y-8">
+        <h2 class="dark:text-white">@apply y @layer (Componentes)</h2>
+        <div class="flex gap-4">
+            <button class="btn-primary">Botón Principal (@apply)</button>
+            <button class="btn-secondary">Botón Secundario (@apply)</button>
+        </div>
+
+        <div class="card max-w-md mt-8">
+            <h3 class="dark:text-white">Card Component</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Este card utiliza la clase .card definida con @apply.</p>
+            <div class="flex gap-2">
+                <span class="badge-success">Éxito</span>
+                <span class="badge-error">Error</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilidades Personalizadas -->
+    <section class="p-10 space-y-8">
+        <h2 class="dark:text-white">Utilidades Personalizadas (@layer utilities)</h2>
+        <h3 class="text-shadow dark:text-white">Texto con sombra personalizada</h3>
+        <div class="w-64 h-32 overflow-auto scrollbar-hide border dark:border-gray-700 p-4 dark:text-gray-400">
+            Contenido con scroll pero sin barra visible (.scrollbar-hide). Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+    </section>
+
+    <!-- Dark Mode -->
+    <section class="p-10 space-y-8 border-t dark:border-gray-800">
+        <h2 class="dark:text-white">Dark Mode (Variante dark:)</h2>
+        <div
+            class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-8 rounded-xl shadow-xl border dark:border-gray-700">
+            <h1 class="text-blue-600 dark:text-blue-400">Título Adaptable</h1>
+            <p class="mb-4">Este bloque cambia de color de fondo, texto y bordes según la preferencia de tu sistema
+                (Claro/Oscuro).</p>
+            <button
+                class="bg-blue-500 dark:bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-800 transition-colors">
+                Botón Adaptable
+            </button>
+        </div>
+    </section>
+
+    <!-- Ejemplo Integrador Completo -->
+    <section class="p-10 bg-gray-100 dark:bg-gray-950">
+        <h2 class="text-center dark:text-white mb-10">Ejemplo Integrador Completo</h2>
+        <div class="max-w-[var(--content-max-width)] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="card">
+                    <h3 class="dark:text-white">Card 1</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Utilizando sistema de diseño completo con
+                        componentes reutilizables.</p>
+                    <button class="btn-primary">Acción</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <h3 class="dark:text-white">Card 2</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Soporte completo para modo oscuro y transiciones
+                        suaves.</p>
+                    <button class="btn-secondary">Acción</button>
+                </div>
+
+                <!-- Formulario -->
+                <form class="card lg:col-span-1">
+                    <h2 class="text-xl mb-4 dark:text-white">Formulario</h2>
+                    <input type="text" placeholder="Nombre" class="input mb-4">
+                    <input type="email" placeholder="Email" class="input mb-4">
+                    <button type="submit" class="btn-primary w-full">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

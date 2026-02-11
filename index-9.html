@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout - Tailwind v4</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="p-10 space-y-20 h-screen overflow-y-auto bg-slate-50">
+
+    <!-- 09. Grid Layout -->
+
+    <!-- Activar Grid y Definir Columnas -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Definir Columnas (grid-cols-3)</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 1</div>
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 2</div>
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 3</div>
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 4</div>
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 5</div>
+            <div class="bg-blue-200 p-4 border border-blue-400 text-center">Item 6</div>
+        </div>
+    </section>
+
+    <!-- Ejemplo Práctico: Galería de Imágenes -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Galería Responsive</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 1</div>
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 2</div>
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 3</div>
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 4</div>
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 5</div>
+            <div
+                class="w-full h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 font-bold italic">
+                Imagen 6</div>
+        </div>
+    </section>
+
+    <!-- Spanning: Ocupar Múltiples Celdas -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Spanning (col-span & row-span)</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-2 bg-blue-500 p-4 text-white text-center font-bold">Ocupa 2 columnas</div>
+            <div class="bg-red-500 p-4 text-white text-center font-bold">1 columna</div>
+            <div class="bg-green-500 p-4 text-white text-center font-bold">1 columna</div>
+            <div class="col-span-2 bg-yellow-500 p-4 text-black text-center font-bold">Ocupa 2 columnas</div>
+        </div>
+
+        <div class="grid grid-cols-3 grid-rows-3 gap-4 mt-8 h-80">
+            <div class="row-span-2 bg-purple-500 p-4 text-white text-center font-bold flex items-center justify-center">
+                Ocupa 2 filas</div>
+            <div class="bg-blue-500 p-4 text-white text-center font-bold">Normal</div>
+            <div class="bg-red-500 p-4 text-white text-center font-bold">Normal</div>
+            <div class="bg-green-500 p-4 text-white text-center font-bold">Normal</div>
+            <div class="bg-yellow-500 p-4 text-white text-center font-bold">Normal</div>
+        </div>
+    </section>
+
+    <!-- Ejemplo Avanzado: Dashboard Layout -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Dashboard Layout</h2>
+        <div class="grid grid-cols-4 grid-rows-3 gap-4 h-[500px]">
+            <!-- Header: ocupa las 4 columnas -->
+            <header class="col-span-4 bg-slate-800 text-white flex items-center px-6 rounded-lg">
+                <h1 class="text-2xl font-bold">Dashboard</h1>
+            </header>
+
+            <!-- Sidebar: ocupa 2 filas -->
+            <aside class="row-span-2 bg-slate-700 text-white p-4 rounded-lg">
+                <nav>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Inicio</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Estadísticas</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Configuración</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main content: ocupa 3 columnas y 2 filas -->
+            <main class="col-span-3 row-span-2 bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                <h2 class="text-xl font-semibold mb-4 text-slate-800">Contenido Principal</h2>
+                <p class="text-slate-600">Este layout utiliza column spanning y row spanning para crear una estructura
+                    típica de aplicación web.</p>
+            </main>
+        </div>
+    </section>
+
+    <!-- Posicionamiento Explícito -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Posicionamiento Explícito</h2>
+        <div class="grid grid-cols-6 gap-4 h-20">
+            <div
+                class="col-start-2 col-end-5 bg-blue-500 text-white flex items-center justify-center font-bold rounded">
+                Col Start 2 - End 5
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Flow -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Grid Flow Column</h2>
+        <div class="grid grid-cols-3 grid-flow-col gap-4 bg-gray-100 p-4 rounded">
+            <div class="bg-white p-4 shadow text-center font-bold">1</div>
+            <div class="bg-white p-4 shadow text-center font-bold">2</div>
+            <div class="bg-white p-4 shadow text-center font-bold">3</div>
+            <div class="bg-white p-4 shadow text-center font-bold">4</div>
+        </div>
+    </section>
+
+    <!-- Columnas Responsivas con Valores Arbitrarios -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2">Columnas Auto-Fit (Valor Arbitrario)</h2>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+            <div class="bg-blue-600 p-8 text-white rounded shadow text-center font-bold">Card 1</div>
+            <div class="bg-red-600 p-8 text-white rounded shadow text-center font-bold">Card 2</div>
+            <div class="bg-green-600 p-8 text-white rounded shadow text-center font-bold">Card 3</div>
+            <div class="bg-yellow-600 p-8 text-black rounded shadow text-center font-bold">Card 4</div>
+        </div>
+    </section>
+
+    <!-- Ejemplo Completo: Card Grid Responsive -->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-bold border-b pb-2 text-blue-800">Ejemplo Completo: Catálogo de Productos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
+                <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 font-bold">PRODUCTO 1
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Producto 1</h3>
+                    <p class="text-gray-600 mb-4">Descripción básica del producto con Grid.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
+                <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 font-bold">PRODUCTO 2
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Producto 2</h3>
+                    <p class="text-gray-600 mb-4">Otro ejemplo de tarjeta en el grid.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 (Featured - ocupa 2 columnas en lg) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 lg:col-span-2">
+                <div
+                    class="w-full h-48 bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold text-2xl">
+                    PRODUCTO DESTACADO</div>
+                <div class="p-4">
+                    <span class="bg-yellow-400 text-xs font-bold px-2 py-1 rounded">DESTACADO</span>
+                    <h3 class="text-xl font-semibold mb-2 mt-2">Producto Destacado Especial</h3>
+                    <p class="text-gray-600 mb-4">Esta tarjeta utiliza <code
+                            class="bg-gray-100 px-1 rounded">lg:col-span-2</code> para destacar sobre el resto en
+                        pantallas grandes.</p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+                        Comprar Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+:root {
+    --bg: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent: #ca8a04;
+    --border: #eeeeee;
+    --fs-base: 1.05rem;
+    --lh-base: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    line-height: var(--lh-base);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navegación sutil */
+.subtle-nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+}
+
+/* EL PATRÓN: Tiny Tweaks */
+/* Una sola columna centrada */
+.columna1 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    /* Ancho máximo para legibilidad óptima */
+    transition: all 0.3s ease;
+}
+
+/* --- AJUSTES SEGÚN TAMAÑO (TINY TWEAKS) --- */
+
+/* 1. Base (Móvil) */
+.columna1 {
+    padding: 0 24px 60px;
+    font-size: var(--fs-base);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Tablet (600px+) */
+@media (min-width: 600px) {
+    .columna1 {
+        padding: 0 40px 80px;
+        font-size: 1.15rem;
+        /* El "Tweaks": fuente un poco más grande */
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .lead {
+        font-size: 1.4rem;
+    }
+}
+
+/* 3. Escritorio (900px+) */
+@media (min-width: 900px) {
+    .columna1 {
+        padding: 0 60px 100px;
+        font-size: 1.25rem;
+        /* Otro "Tweak": fuente de lectura perfecta */
+    }
+
+    h1 {
+        font-size: 3.75rem;
+    }
+}
+
+/* Estilos de contenido premium */
+.category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.article-footer {
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+}
+
+.line {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 1rem;
+}

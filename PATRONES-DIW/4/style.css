@@ -1,0 +1,184 @@
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --bg: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --accent: #22d3ee;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.main-nav {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: var(--text-dim);
+}
+
+/* Base Cards */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    background: rgba(34, 211, 238, 0.1);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- Patrón Layout Shifter --- */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Movil (Vertical Stack) */
+.columna1,
+.columna2,
+.columna3,
+.container-inner {
+    width: 100%;
+}
+
+/* Mediana (Tablet) */
+@media (min-width: 600px) {
+    .container {
+        padding: 3rem;
+    }
+
+    /* Shift: La Columna 1 se vuelve una barra lateral y el resto se agrupa */
+    .columna1 {
+        width: calc(30% - 0.75rem);
+    }
+
+    .container-inner {
+        width: calc(70% - 0.75rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* Grande (Escritorio) */
+@media (min-width: 1000px) {
+
+    /* Shift extremo: Redistribución total */
+    .container {
+        display: grid;
+        grid-template-columns: 250px 1fr 300px;
+        grid-template-areas: "sidebar main widgets";
+        align-items: start;
+    }
+
+    .columna1 {
+        grid-area: sidebar;
+        width: 100%;
+    }
+
+    .container-inner {
+        display: contents;
+        /* Deshace el contenedor intermedio para usar el grid principal */
+    }
+
+    .columna2 {
+        grid-area: main;
+    }
+
+    .columna3 {
+        grid-area: widgets;
+    }
+
+    .main-card {
+        padding: 4rem;
+    }
+}
+
+/* Elementos de la Sidebar */
+.tool-item {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tool-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+}

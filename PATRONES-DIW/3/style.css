@@ -1,0 +1,144 @@
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Nav */
+.top-nav {
+    background: var(--white);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+/* Base Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.side-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--text-muted);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+
+.nav-list a:hover {
+    color: var(--primary);
+}
+
+.demo-image {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    height: 150px;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+/* --- Patrón Column Drop --- */
+
+/* Movil: Columnas al 100% */
+.columna1,
+.columna2,
+.columna3 {
+    width: 100%;
+}
+
+/* Tablet: La principal y una lateral se juntan, la otra cae */
+@media (min-width: 600px) {
+    .columna1 {
+        width: calc(65% - 0.75rem);
+        order: 2;
+        /* Movemos la principal a la derecha */
+    }
+
+    .columna2 {
+        width: calc(35% - 0.75rem);
+        order: 1;
+        /* Sidebar a la izquierda */
+    }
+
+    .columna3 {
+        width: 100%;
+        /* Esta sigue cayendo debajo en tablet */
+        order: 3;
+    }
+}
+
+/* Escritorio: Las tres en una fila */
+@media (min-width: 900px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .columna1 {
+        width: calc(50% - 1rem);
+        /* Principal centro */
+        order: 2;
+    }
+
+    .columna2 {
+        width: calc(25% - 1rem);
+        /* Izquierda */
+        order: 1;
+    }
+
+    .columna3 {
+        width: calc(25% - 1rem);
+        /* Derecha */
+        order: 3;
+    }
+}

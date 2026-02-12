@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off-Canvas Experience</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <button id="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="logo">CanvasStudio</div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <!-- Columna 1: Menú Lateral -->
+        <aside class="columna1" id="side-menu">
+            <div class="side-content">
+                <div class="user-profile">
+                    <div class="avatar"></div>
+                    <div class="user-info">
+                        <p class="name">DIW Alumno</p>
+                        <p class="role">Diseñador Web</p>
+                    </div>
+                </div>
+                <nav class="side-nav">
+                    <ul>
+                        <li><a href="#" class="active"><i class="icon"></i>Dashboard</a></li>
+                        <li><a href="#"><i class="icon"></i>Proyectos</a></li>
+                        <li><a href="#"><i class="icon"></i>Analíticas</a></li>
+                        <li><a href="#"><i class="icon"></i>Mensajes</a></li>
+                        <li><a href="#"><i class="icon"></i>Configuración</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Columna 2: Area de Contenido -->
+        <main class="columna2">
+            <header class="content-header">
+                <h1>Patrón Off-Canvas</h1>
+                <p class="subtitle">Diseño adaptativo para interfaces densas en contenido.</p>
+            </header>
+
+            <section class="grid-demo">
+                <div class="demo-card">
+                    <h3>¿Qué es Off-Canvas?</h3>
+                    <p>Es un patrón donde el contenido secundario (como menús o filtros) se oculta fuera de la vista del
+                        usuario en pantallas pequeñas y se desliza hacia adentro cuando se solicita.</p>
+                </div>
+                <div class="demo-card">
+                    <h3>Ventajas</h3>
+                    <p>Maximiza el espacio de lectura en dispositivos móviles sin sacrificar la navegación compleja.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            menu.classList.toggle('open');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>

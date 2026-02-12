@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern: Layout Shifter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <span class="logo">ShiftDesign</span>
+            <ul class="nav-links">
+                <li>Docs</li>
+                <li>Examples</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Columna 1: Panel de Control / Sidebar -->
+        <aside class="columna1">
+            <div class="card sidebar-card">
+                <h3>Herramientas</h3>
+                <div class="tool-item">Panel de Control</div>
+                <div class="tool-item">Estadísticas</div>
+                <div class="tool-item">Configuración</div>
+            </div>
+        </aside>
+
+        <!-- Contenedor Interno para mover el flujo de contenido -->
+        <div class="container-inner">
+            <!-- Columna 2: Area Principal -->
+            <main class="columna2">
+                <div class="card main-card">
+                    <h1>Layout Shifter</h1>
+                    <p>Este patrón es el más complejo y flexible. A diferencia de otros que solo escalan o reorganizan
+                        columnas, el <strong>Layout Shifter</strong> mueve bloques completos de contenido a diferentes
+                        posiciones estructurales según el breakpoint.</p>
+                    <div class="status-badge">Activo</div>
+                </div>
+            </main>
+
+            <!-- Columna 3: Información Extra / Widgets -->
+            <section class="columna3">
+                <div class="card widget-card">
+                    <h4>Info Adicional</h4>
+                    <p>En este ejemplo, observa cómo la disposición cambia drásticamente entre móvil, tablet y
+                        escritorio.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

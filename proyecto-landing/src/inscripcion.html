@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al curso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/tailwind.css">
+</head>
+
+<body class="bg-black text-white p-4 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="w-full max-w-md">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/index.html" class="text-zinc-500 text-sm flex items-center gap-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                Volver
+            </a>
+            <span class="font-bold">CodeCraft</span>
+        </div>
+
+        <div class="bg-zinc-900/50 p-6 sm:p-10 rounded-3xl border border-white/5">
+            <h1 class="text-2xl font-bold">Registro</h1>
+            <p class="text-zinc-400 text-sm mb-8 mt-2">Danos tus datos para poder contactarte.</p>
+
+            <form action="#" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-tight">Nombre</label>
+                    <input type="text"
+                        class="w-full bg-zinc-800/50 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none placeholder:text-zinc-600"
+                        placeholder="Tu nombre...">
+                </div>
+                <div>
+                    <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-tight">Email</label>
+                    <input type="email"
+                        class="w-full bg-zinc-800/50 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none placeholder:text-zinc-600"
+                        placeholder="correo@ejemplo.com">
+                </div>
+                <div>
+                    <label class="block text-xs text-zinc-500 mb-1 uppercase tracking-tight">Experiencia</label>
+                    <select
+                        class="w-full bg-zinc-800/50 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none text-zinc-400">
+                        <option>Principiante</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                </div>
+                <button class="w-full bg-white text-black font-bold py-3 rounded-full mt-6 text-sm">
+                    Inscribirme ahora
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft | Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/tailwind.css">
+</head>
+
+<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+
+    <header class="relative z-50">
+        <nav class="flex justify-between items-center px-[6%] py-8 max-w-[1400px] mx-auto">
+            <div class="text-2xl font-bold tracking-tight">CodeCraft</div>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity">Acerca de</a>
+                <a href="/inscripcion.html" class="bg-white text-black px-6 py-2 rounded-full font-bold text-sm">
+                    Ingresa al curso
+                </a>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden p-2 relative z-50">
+                <svg id="menu-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <svg id="close-icon" class="hidden" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-500">
+        <a href="#" class="text-xl font-medium">Acerca de</a>
+        <a href="/inscripcion.html" class="bg-white text-black px-8 py-3 rounded-full font-bold text-lg">
+            Ingresa al curso
+        </a>
+    </div>
+
+    <main class="space-y-24 pb-24">
+        <section class="px-[4%]">
+            <div
+                class="relative group max-w-[1200px] mx-auto h-[75vh] min-h-[500px] rounded-[2.5rem] overflow-hidden flex items-end justify-start shadow-2xl">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+                <div class="relative z-10 p-10 md:p-16 max-w-2xl">
+                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-tight">
+                        Domina CSS <span class="text-blue-500">desde cero</span>
+                    </h1>
+                    <p class="text-base md:text-lg opacity-70 mb-8 max-w-lg">
+                        Aprende las mejores técnicas de diseño web con nuestro curso intensivo. Crea interfaces de otro
+                        nivel hoy mismo.
+                    </p>
+                    <a href="/inscripcion.html"
+                        class="inline-flex bg-white text-black px-8 py-3 rounded-full font-bold text-base hover:opacity-90 transition-opacity">
+                        Inscríbete ahora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[1200px] mx-auto px-[6%]">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Lo Que Aprenderás</h2>
+                <p class="opacity-50 max-w-2xl">
+                    Desde los conceptos más básicos hsta el dominio completo de las herramientas más potentes del
+                    mercado.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-8 rounded-3xl border border-white/5 space-y-4">
+                    <div class="text-blue-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="m13 13 3 5a1 1 0 0 0 1.8-1l-2.4-4M13 13l-3-6a1 1 0 0 0-1.8 1l2.4 6M13 13l-6 1a1 1 0 0 0-1 1.8l6 2.4l6-1a1 1 0 0 0 1-1.8l-6-2.4M13 13v6a1 1 0 0 0 1.8 1l-1.8-7M13 13V7a1 1 0 0 0-1.8-1l1.8 7Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Conceptos Básicos</h3>
+                    <p class="opacity-60 text-sm">Entiende el core de cómo funciona el diseño en la web moderna.</p>
+                </div>
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-8 rounded-3xl border border-white/5 space-y-4">
+                    <div class="text-blue-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="m13 13 3 5a1 1 0 0 0 1.8-1l-2.4-4M13 13l-3-6a1 1 0 0 0-1.8 1l2.4 6M13 13l-6 1a1 1 0 0 0-1 1.8l6 2.4l6-1a1 1 0 0 0 1-1.8l-6-2.4M13 13v6a1 1 0 0 0 1.8 1l-1.8-7M13 13V7a1 1 0 0 0-1.8-1l1.8 7Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Layouts</h3>
+                    <p class="opacity-60 text-sm">Domina Flexbox, Grid y técnicas avanzadas de posicionamiento.</p>
+                </div>
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-8 rounded-3xl border border-white/5 space-y-4">
+                    <div class="text-blue-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                            <path d="M3 15h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H3" />
+                            <path d="M3 12h3a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Proyectos Reales</h3>
+                    <p class="opacity-60 text-sm">Aplica todo lo aprendido en sitios que puedes añadir a tu LinkedIn.
+                    </p>
+                </div>
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-8 rounded-3xl border border-white/5 space-y-4">
+                    <div class="text-blue-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="16" height="10" x="2" y="3" rx="2" />
+                            <path d="M7 21h10" />
+                            <path d="M12 13v8" />
+                            <path d="M15 18H9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold">Responsive</h3>
+                    <p class="opacity-60 text-sm">Aprende a dotar a tus sitios de una adaptabilidad total.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[1200px] mx-auto px-[6%]">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Lo que dicen</h2>
+                <p class="opacity-50 max-w-2xl">Testimonios directos de quienes ya han pasado por el curso.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-zinc-900/30 hover:bg-zinc-800/50 transition-colors p-8 rounded-[2rem] border border-white/5 flex flex-col justify-between">
+                    <p class="opacity-80 italic mb-8">"Me sirvió muchísimo para mejorar mis bases y ahora trabajo de
+                        esto."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+                            class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="text-sm font-bold">Elena R.</p>
+                            <p class="text-xs opacity-40">Dev Junior</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-zinc-900/30 hover:bg-zinc-800/50 transition-colors p-8 rounded-[2rem] border border-white/5 flex flex-col justify-between">
+                    <p class="opacity-80 italic mb-8">"Explicaciones claras y ejemplos prácticos desde el primer día."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
+                            class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="text-sm font-bold">Marcos S.</p>
+                            <p class="text-xs opacity-40">Frontend Dev</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-zinc-900/30 hover:bg-zinc-800/50 transition-colors p-8 rounded-[2rem] border border-white/5 flex flex-col justify-between">
+                    <p class="opacity-80 italic mb-8">"El mejor curso de CSS que he hecho hasta la fecha."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150"
+                            class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="text-sm font-bold">Sara V.</p>
+                            <p class="text-xs opacity-40">Diseñadora Web</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-[1200px] mx-auto px-[6%] space-y-16">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Elige tu plan</h2>
+                <p class="opacity-50 max-w-2xl">Invierte en tu futuro y domina el desarrollo frontend de una vez por
+                    todas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-10 rounded-[2.5rem] border border-white/5 flex flex-col items-start gap-6">
+                    <div class="space-y-1">
+                        <h4 class="text-zinc-500 font-medium text-sm">Básico</h4>
+                        <p class="text-4xl font-bold">29€</p>
+                    </div>
+                    <ul class="text-sm opacity-60 space-y-3">
+                        <li>• Acceso a todos los videos</li>
+                        <li>• Certificado digital</li>
+                        <li>• Proyectos prácticos</li>
+                    </ul>
+                    <a href="/inscripcion.html"
+                        class="w-full text-center border border-white/10 py-3 rounded-full text-sm font-bold mt-auto hover:bg-white hover:text-black transition-all">
+                        Empezar ya
+                    </a>
+                </div>
+
+                <div
+                    class="bg-blue-600/10 hover:bg-blue-600/20 transition-colors p-10 rounded-[2.5rem] border border-blue-500/20 flex flex-col items-start gap-6 relative overflow-hidden">
+                    <div
+                        class="absolute top-6 right-6 bg-blue-500 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">
+                        Popular</div>
+                    <div class="space-y-1">
+                        <h4 class="text-blue-400 font-medium text-sm">Pro</h4>
+                        <p class="text-4xl font-bold">59€</p>
+                    </div>
+                    <ul class="text-sm opacity-80 space-y-3">
+                        <li>• Todo lo del plan Básico</li>
+                        <li>• Comunidad exclusiva Discord</li>
+                        <li>• Recursos descargables</li>
+                    </ul>
+                    <a href="/inscripcion.html"
+                        class="w-full text-center bg-white text-black py-3 rounded-full text-sm font-bold mt-auto">
+                        Suscribirme
+                    </a>
+                </div>
+
+                <div
+                    class="bg-zinc-900/40 hover:bg-zinc-800/60 transition-colors p-10 rounded-[2.5rem] border border-white/5 flex flex-col items-start gap-6">
+                    <div class="space-y-1">
+                        <h4 class="text-zinc-500 font-medium text-sm">Mentoría</h4>
+                        <p class="text-4xl font-bold">199€</p>
+                    </div>
+                    <ul class="text-sm opacity-60 space-y-3">
+                        <li>• Todo lo del plan Pro</li>
+                        <li>• Sesiones 1 a 1</li>
+                        <li>• Revisión de código</li>
+                    </ul>
+                    <a href="/inscripcion.html"
+                        class="w-full text-center border border-white/10 py-3 rounded-full text-sm font-bold mt-auto hover:bg-white hover:text-black transition-all">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t border-white/5 py-12 px-[6%] text-center">
+        <div class="max-w-2xl mx-auto space-y-6 opacity-40 text-xs">
+            <div class="flex justify-center gap-8">
+                <a href="#">Contacto</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
+            <p>&copy; 2026 CodeCraft. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const overlay = document.getElementById('menu-overlay');
+        const mIcon = document.getElementById('menu-icon');
+        const cIcon = document.getElementById('close-icon');
+
+        btn.addEventListener('click', () => {
+            const open = overlay.classList.contains('translate-y-0');
+            overlay.classList.toggle('translate-y-0', !open);
+            overlay.classList.toggle('-translate-y-full', open);
+            mIcon.classList.toggle('hidden', !open);
+            cIcon.classList.toggle('hidden', open);
+            document.body.style.overflow = open ? '' : 'hidden';
+        });
+    </script>
+</body>
+
+</html>
